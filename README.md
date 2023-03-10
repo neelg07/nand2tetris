@@ -1,4 +1,5 @@
-# [From Nand to Tetris](https://www.nand2tetris.org/software) Building a Modern Computer From First Principles
+# [From Nand to Tetris](https://www.nand2tetris.org/software)
+Building a Modern Computer From First Principles
 
 ## Overview
 This project is from the MOOC course nand2tetris. From building basic elementary logic gates to writing a high level language and operating system, this course will teach me how to build a modern-day, all-purpose PC from the ground up. By digging deep into the implementations behind the multi-layered abstractions used to create the hardware and software, I hope to reach a higher understanding behind the lower-level processes that make up today's computing world.

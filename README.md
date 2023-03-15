@@ -18,7 +18,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 
 * Project 0: Introduction 
 * [Project 1: Boolean Logic](#project-1)
-* Project 2: Boolean Arithmetic
+* [Project 2: Boolean Arithmetic](#project-2)
 * Project 3: Sequential Logic   
 * Project 4: Machine Language 
 * Project 5: Computer Architecture  
@@ -42,3 +42,5 @@ By digging deep into the implementations behind the multi-layered abstractions u
 - Multi-bit elementary gates were the easiest to implement since it is just stacking an array of n elementary gates for an n-bit complex gate.
 
 - Multi-way gates, or multi-input gates, were tricky at first, but easy enough once the pattern showing the relationship between an m-way gate and its normal elementary gate was found. 
+
+## Project 2

@@ -33,6 +33,8 @@ By digging deep into the implementations behind the multi-layered abstractions u
 ## Project 1
 - Used logic and boolean algebra to reduce and simplify the implementation of several elementary logic gates. De Morgan's Laws and Distributive property were particularly useful.
 
+- Started with only a Nand gate but used previously-built chips for chip implementations down the line to avoid redundancy and to simplify complexity.
+
 - Played around with a logic gate simulator to determine inner chip gate links as problems got more complex.
 
 - Implementation of Mux and DMux were the most difficult and required several different try, check, and revise cycles but eventually came to a solution that seems to be close to optimal, if not optimal. 

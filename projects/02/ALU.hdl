@@ -43,18 +43,18 @@ CHIP ALU {
 
     PARTS:
     // Put you code here:
-    Mux16(a=x, b[0..15]=false, sel=zx, out=xMuxZx);
-    Not16(in=xMuxZx, out=notxMuxZx);
-    Mux16(a=xMuxZx, b=notxMuxZx, sel=nx, out=xMuxZxMuxNx);
+    Mux16(a=x, b[0..15]=false, sel=zx, out=zxOut);
+    Not16(in=zxOut, out=notzxOut);
+    Mux16(a=zxOut, b=notzxOut, sel=nx, out=nxOut);
 
-    Mux16(a=y, b[0..15]=false, sel=zy, out=yMuxZy);
-    Not16(in=yMuxZy, out=notyMuxZy);
-    Mux16(a=yMuxZy, b=notyMuxZy, sel=ny, out=yMuxZyMuxNy);
+    Mux16(a=y, b[0..15]=false, sel=zy, out=zyOut);
+    Not16(in=zyOut, out=notzyOut);
+    Mux16(a=zyOut, b=notzyOut, sel=ny, out=nyOut);
 
-    And16(a=xMuxZxMuxNx, b=yMuxZyMuxNy, out=andOut);
-    Add16(a=xMuxZxMuxNx, b=yMuxZyMuxNy, out=addOut);
+    And16(a=nxOut, b=nyOut, out=and16Out);
+    Add16(a=nxOut, b=nyOut, out=add16Out);
 
-    Mux16(a=andOut, b=addOut, sel=f, out=xyMuxf);
-    Not16(in=xyMuxf, out=noOut);
-    Mux16(a=xyMuxf, b=noOut, sel=no, out=outFork);   
+    Mux16(a=and16Out, b=add16Out, sel=f, out=fOut);
+    Not16(in=fOut, out=notfOut);
+    Mux16(a=fOut, b=notfOut, sel=no, out=out);   
 }

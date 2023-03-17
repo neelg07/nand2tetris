@@ -43,20 +43,101 @@ CHIP ALU {
 
     PARTS:
     // Put you code here:
-    Mux16(a=x, b[0..15]=false, sel=zx, out=zxOut);
+    Mux16(a=x, b[0..15]=false, sel=zx, out=zxOut);  // Zx & Nx computation circuit
     Not16(in=zxOut, out=notzxOut);
     Mux16(a=zxOut, b=notzxOut, sel=nx, out=nxOut);
 
-    Mux16(a=y, b[0..15]=false, sel=zy, out=zyOut);
+    Mux16(a=y, b[0..15]=false, sel=zy, out=zyOut);  // Zy & Ny computation circuit
     Not16(in=zyOut, out=notzyOut);
     Mux16(a=zyOut, b=notzyOut, sel=ny, out=nyOut);
 
-    And16(a=nxOut, b=nyOut, out=and16Out);
+    And16(a=nxOut, b=nyOut, out=and16Out);      // Add and && split pathways dependant on f input
     Add16(a=nxOut, b=nyOut, out=add16Out);
 
-    Mux16(a=and16Out, b=add16Out, sel=f, out=fOut);
+    Mux16(a=and16Out, b=add16Out, sel=f, out=fOut);   // f input computation circuit
     Not16(in=fOut, out=notfOut);
-    Mux16(a=fOut, b=notfOut, sel=no, out[0..15]=outFork, out=out);
+    Mux16(a=fOut, b=notfOut, sel=no, 
+            out[0..15]=outFork,
+            out[0]=outbit0,
+            out[1]=outbit1,
+            out[2]=outbit2,
+            out[3]=outbit3,
+            out[4]=outbit4,
+            out[5]=outbit5,
+            out[6]=outbit6,
+            out[7]=outbit7,
+            out[8]=outbit8,
+            out[9]=outbit9,
+            out[10]=outbit10,
+            out[11]=outbit11,
+            out[12]=outbit12,
+            out[13]=outbit13,
+            out[14]=outbit14,
+            out[15]=outbit15, out=out);  // no computation circuit
 
-    And16(a[0..15]=outFork, b[0..15]=true, out[15]=ng);   
+    And(a=outbit15, b=true, out=ng); // Result == ng computation
+
+    // Start of zr circuit computation
+    Or(a=outbit0, b=false, out=or0);
+    Not(in=or0, out=nor0);
+    
+    Or(a=outbit1, b=false, out=or1);
+    Not(in=or1, out=nor1);
+    And(a=nor0, b=nor1, out=and1);
+
+    Or(a=outbit2, b=false, out=or2);
+    Not(in=or2, out=nor2);
+    And(a=and1, b=nor2, out=and2);
+
+    Or(a=outbit3, b=false, out=or3);
+    Not(in=or3, out=nor3);
+    And(a=and2, b=nor3, out=and3);
+
+    Or(a=outbit4, b=false, out=or4);
+    Not(in=or4, out=nor4);
+    And(a=and3, b=nor4, out=and4);
+
+    Or(a=outbit5, b=false, out=or5);
+    Not(in=or5, out=nor5);
+    And(a=and4, b=nor5, out=and5);
+
+    Or(a=outbit6, b=false, out=or6);
+    Not(in=or6, out=nor6);
+    And(a=and5, b=nor6, out=and6);
+
+    Or(a=outbit7, b=false, out=or7);
+    Not(in=or7, out=nor7);
+    And(a=and6, b=nor7, out=and7);
+
+    Or(a=outbit8, b=false, out=or8);
+    Not(in=or8, out=nor8);
+    And(a=and7, b=nor8, out=and8);
+
+    Or(a=outbit9, b=false, out=or9);
+    Not(in=or9, out=nor9);
+    And(a=and8, b=nor9, out=and9);
+
+    Or(a=outbit10, b=false, out=or10);
+    Not(in=or10, out=nor10);
+    And(a=and9, b=nor10, out=and10);
+
+    Or(a=outbit11, b=false, out=or11);
+    Not(in=or11, out=nor11);
+    And(a=and10, b=nor11, out=and11);
+
+    Or(a=outbit12, b=false, out=or12);
+    Not(in=or12, out=nor12);
+    And(a=and11, b=nor12, out=and12);
+
+    Or(a=outbit13, b=false, out=or13);
+    Not(in=or13, out=nor13);
+    And(a=and12, b=nor13, out=and13);
+
+    Or(a=outbit14, b=false, out=or14);
+    Not(in=or14, out=nor14);
+    And(a=and13, b=nor14, out=and14);
+
+    Or(a=outbit15, b=false, out=or15);
+    Not(in=or15, out=nor15);
+    And(a=and14, b=nor15, out=zr);
 }

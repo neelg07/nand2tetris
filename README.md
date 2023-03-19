@@ -19,7 +19,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 * Project 0: Introduction 
 * [Project 1: Boolean Logic](#project-1)
 * [Project 2: Boolean Arithmetic](#project-2)
-* Project 3: Sequential Logic   
+* [Project 3: Sequential Logic](#project-3)   
 * Project 4: Machine Language 
 * Project 5: Computer Architecture  
 * Project 6: Assembler   
@@ -30,7 +30,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 * Project 11: Compiler II: Code Generation   
 * Project 12: Operating System 
 
-## Project 1
+## Project 1: Boolean Logic
 - Used logic and boolean algebra to reduce and simplify the implementation of several elementary logic gates. De Morgan's Laws and Distributive property were particularly useful.
 
 - Started with only a Nand gate but used previously-built chips for chip implementations down the line to avoid redundancy and to simplify complexity.
@@ -43,4 +43,15 @@ By digging deep into the implementations behind the multi-layered abstractions u
 
 - Multi-way gates, or multi-input gates, were tricky at first, but easy enough once the pattern showing the relationship between an m-way gate and its normal elementary gate was found. 
 
-## Project 2
+## Project 2: Boolean Arithmetic 
+- Used chips created in Project 1 in a certain combinatorial pattern to create chips that build into the ALU (focus on arithmatic and addition of 16-bit inputs).
+
+- Half-Adder implementation was trivial, Full-Adder took a little logic and time to solve, 16-bit Adder was also a trivial sequence of Full-Adder chips.
+
+- The most difficult in this project was the ALU. Using Multiplexors, implementing the ALU was simple enough to figure out, however, the status outputs were a hurdle to overcome. 
+
+- Was tricky figuring out how to determine if a number was zero or negative, but realizing 2's complement rules/patterns as well as bitwise checking for true/false bits led to a solution for both.
+
+- Overall, an easier time than Project 1. 
+
+## Project 3: Memory & Sequential Logic

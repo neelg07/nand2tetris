@@ -44,7 +44,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 - Multi-way gates, or multi-input gates, were tricky at first, but easy enough once the pattern showing the relationship between an m-way gate and its normal elementary gate was found. 
 
 ## Project 2: Boolean Arithmetic 
-- Used chips created in Project 1 in a certain combinatorial pattern to create chips that build into the ALU (focus on arithmatic and addition of 16-bit inputs).
+- Used chips created in Project 1 in a certain combinatorial pattern to create chips that build into the ALU (focus on arithmetic and addition of 16-bit inputs).
 
 - Half-Adder implementation was trivial, Full-Adder took a little logic and time to solve, 16-bit Adder was also a trivial sequence of Full-Adder chips.
 

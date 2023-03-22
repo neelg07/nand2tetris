@@ -55,3 +55,10 @@ By digging deep into the implementations behind the multi-layered abstractions u
 - Overall, an easier time than Project 1. 
 
 ## Project 3: Memory & Sequential Logic
+- I enjoyed learning about how memory really works in this chapter and all of the underlying parts and organized hardware that go into making RAM chips and other storage systems.
+
+- Although a good portion of the hardware and functionality was abstracted away, sequential logic was not as difficult to grasp as I imagined it to be.
+
+- All the RAM chips were simple enough to implement by using recursive logic after the first RAM8 chip was complete.
+
+- Was slightly hard to understand how to implement the Program Counter at first but eventually got it.

@@ -18,8 +18,8 @@ By digging deep into the implementations behind the multi-layered abstractions u
 
 * Project 0: Introduction 
 * [Project 1: Boolean Logic](#project-1-boolean-logic)
-* [Project 2: Boolean Arithmetic](#project-2)
-* [Project 3: Sequential Logic](#project-3)   
+* [Project 2: Boolean Arithmetic](#project-2-boolean-arithmetic)
+* [Project 3: Sequential Logic](#project-3-memory--sequential-logic)   
 * Project 4: Machine Language 
 * Project 5: Computer Architecture  
 * Project 6: Assembler   

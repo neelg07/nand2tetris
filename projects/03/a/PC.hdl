@@ -17,4 +17,16 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+    Inc16(in=outFork, out=incremented);
+
+    Not(in=load, out=notLoad);
+    And(a=inc, b=notLoad, out=incNoLoad);
+
+    Mux16(a=in, b=incremented, sel=incNoLoad, out=incOut);
+    Mux16(a=incOut, b[0..15]=false, sel=reset, out=resetOut);
+
+    Or(a=inc, b=reset, out=incOrReset);
+    Or(a=incOrReset, b=load, out=or3way);
+    
+    Register(in=resetOut, load=or3way, out=out, out=outFork);
 }

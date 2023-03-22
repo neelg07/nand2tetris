@@ -17,7 +17,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 ## Projects
 
 * Project 0: Introduction 
-* [Project 1: Boolean Logic](#project-1)
+* [Project 1: Boolean Logic](#project-1:-boolean-logic)
 * [Project 2: Boolean Arithmetic](#project-2)
 * [Project 3: Sequential Logic](#project-3)   
 * Project 4: Machine Language 

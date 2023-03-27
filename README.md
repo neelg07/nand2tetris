@@ -20,7 +20,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 * [Project 1: Boolean Logic](#project-1-boolean-logic)
 * [Project 2: Boolean Arithmetic](#project-2-boolean-arithmetic)
 * [Project 3: Sequential Logic](#project-3-memory--sequential-logic)   
-* Project 4: Machine Language 
+* [Project 4: Machine Language](#project-4-machine-language)
 * Project 5: Computer Architecture  
 * Project 6: Assembler   
 * Project 7: VM I: Stack Arithmetic   
@@ -62,3 +62,5 @@ By digging deep into the implementations behind the multi-layered abstractions u
 - All the RAM chips were simple enough to implement by using recursive logic after the first RAM8 chip was complete.
 
 - Was slightly hard to understand how to implement the Program Counter at first but eventually got it.
+
+## Project 4: Machine Language

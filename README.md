@@ -68,12 +68,12 @@ By digging deep into the implementations behind the multi-layered abstractions u
 
 - It is really interesting to learn how Assembly is not a single language, and the Assembly language used in this course is just one of many possible languages that work as the bridge between software and the computer's hardware.
 
-- The Assembly language chosen depends on the computer's architecture, hardware, system capabilities, etc.
+- The Assembly language chosen depends on the computer's architecture, hardware, system capabilities, agreed-upon convention, etc.
 
 - This Hack computer uses a simpler one due to less features in the CPU/ALU, as well as being a 16-bit computer, but it was a good representation/comparison to real Assembly languages used in modern computers. I learned a lot about the theory behind them which is more important than just learning the syntax in my opinion.
 
 - The fact that Assembler's translate all the Assembly code into 1s and 0s is mind boggling and impressive to see how much compilers and transpilers really work to get high-level languages translated into Assembly, and Assembly into binary.
 
-- The Multiplication project was easy, I had the implementation plan layed out in my head prior to starting, but still decided to write pseudo-code for good habit. Nailed it on the first try. 
+- The Multiplication project was easy, I had the implementation plan laid out in my head prior to starting, but still decided to write pseudo-code for good habit. Nailed it on the first try. 
 
 - The Fill project was a little bit trickier and took a few attempts and slow step-by-step debugging to understand how the program worked and what I was missing in the code. Got it within the first 3-5 trials and felt pretty good with completing this project in less than a day. 

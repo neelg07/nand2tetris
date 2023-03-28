@@ -16,7 +16,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 
 ## Projects
 
-* Project 0: Introduction 
+* [Project 0: Introduction](#project-0-practice)
 * [Project 1: Boolean Logic](#project-1-boolean-logic)
 * [Project 2: Boolean Arithmetic](#project-2-boolean-arithmetic)
 * [Project 3: Sequential Logic](#project-3-memory--sequential-logic)   
@@ -29,6 +29,9 @@ By digging deep into the implementations behind the multi-layered abstractions u
 * Project 10: Compiler I: Syntax Analysis   
 * Project 11: Compiler II: Code Generation   
 * Project 12: Operating System 
+
+## Project 0: Practice
+- This project serves as a practice/test for submitting assignments on the Coursera website. Since I am taking the course as an auditor, I did not need to do anything for this project. 
 
 ## Project 1: Boolean Logic
 - Used logic and boolean algebra to reduce and simplify the implementation of several elementary logic gates. De Morgan's Laws and Distributive property were particularly useful.

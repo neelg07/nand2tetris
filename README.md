@@ -21,7 +21,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 * [Project 2: Boolean Arithmetic](#project-2-boolean-arithmetic)
 * [Project 3: Sequential Logic](#project-3-memory--sequential-logic)   
 * [Project 4: Machine Language](#project-4-machine-language)
-* Project 5: Computer Architecture  
+* [Project 5: Computer Architecture](#project-5-computer-architecture)  
 * Project 6: Assembler   
 * Project 7: VM I: Stack Arithmetic   
 * Project 8: VM II: Program Control   
@@ -79,4 +79,15 @@ By digging deep into the implementations behind the multi-layered abstractions u
 
 - The Multiplication project was easy, I had the implementation plan laid out in my head prior to starting, but still decided to write pseudo-code for good habit. Nailed it on the first try. 
 
-- The Fill project was a little bit trickier and took a few attempts and slow step-by-step debugging to understand how the program worked and what I was missing in the code. Got it within the first 3-5 trials and felt pretty good with completing this project in less than a day. 
+- The Fill project was a little bit trickier and took a few attempts and slow step-by-step debugging to understand how the program worked and what I was missing in the code. Got it within the first 3-5 trials and felt pretty good with completing this project in less than a day.
+
+## Project 5: Computer Architecture
+- This chapter as a whole was a really interesting and informational watch and read. It tied in and solidified the concepts learned in Chapter 4, as well as  provide detail in the computer hardware specification and how the CPU interacts in an almost closed-loop with the instructional and data memory sets. 
+
+- Completing this chapter gave me the foundational knowledge on how a computer's hardware system is built from the ground-up (i.e. Logic gates to the CPU and Computer units).
+
+- The Memory was simple enough to implement as it was similar to the RAM chips built in Chapter 3, but was a bit tricky figuring out how to implement the Keyboard chip.
+
+- The most difficult concept to implement was the CPU chip, mostly because I thought I got the implementation correct but missed a few minor details like the load inputs for ARegister and DRegister. I had to use the test script and compare file provided to debug this process one by one, and even looked at the little details such as individual 16-bit instructional code to find a resolution.
+
+- All in all, pretty simple project when compared to the past few, and the computer test scripts provided all ran positive results on the first run.

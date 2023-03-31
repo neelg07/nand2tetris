@@ -40,4 +40,54 @@ CHIP CPU {
 
     PARTS:
     // Put your code here:
+
+    Mux16(a=instruction, b=ALUout, sel=instruction[15], out=ARegIn);
+
+    Not(in=instruction[15], out=Ainstruc);
+    Or(a=instruction[5], b=Ainstruc, out=saveAreg);
+    ARegister(in=ARegIn, load=saveAreg, out=ARegOut, out[0..14]=addressM);
+
+    // writeM output
+    And(a=instruction[15], b=instruction[3], out=writeM);
+
+    Mux16(a=ARegOut, b=inM, sel=instruction[12], out=AorM);
+
+    DRegister(in=ALUout, load=instruction[4], out=DRegOut);
+    ALU(x=DRegOut, y=AorM, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=ALUout, out=outM, zr=zr, ng=ng);
+
+    
+    PC(in=ARegOut, load=pcLoad, inc=true, reset=reset, out[0..14]=pc);
+
+    // PC Load Input Logic //
+    And(a=true, b=instruction[15], out=CInstruct);
+    DMux8Way(in=CInstruct, sel=instruction[0..2], a=null, b=jgt, c=jeq, d=jge, e=jlt, f=jne, g=jle, h=JMP);
+
+    /* Null path omitted
+     * 6 conditional paths formed by combining Dmux outputs with ng/zr bit logic 
+    */ 
+
+    Not(in=zr, out=notzr);                  // JGT
+    Not(in=ng, out=notng);
+    And(a=notzr, b=notng, out=checkJGT);
+    And(a=jgt, b=checkJGT, out=JGT);
+
+    And(a=zr, b=jeq, out=JEQ);              // JEQ
+
+    Or(a=zr, b=notng, out=checkJGE);        // JGE
+    And(a=jge, b=checkJGE, out=JGE);
+
+    And(a=ng, b=jlt, out=JLT);              // JLT
+
+    And(a=notzr, b=jne, out=JNE);           // JNE
+
+    Or(a=ng, b=zr, out=ngOrzr);             // JLE
+    And(a=ngOrzr, b=jle, out=JLE);
+
+    /* Recombine all paths with Or8way gate
+     * If any of the logic paths are true then jump should activate
+     * and load will be set to true in PC
+     * Null path auto sets one input bit to false
+    */ 
+
+    Or8Way(in[0]=false, in[1]=JGT, in[2]=JEQ, in[3]=JGE, in[4]=JLT, in[5]=JNE, in[6]=JLE, in[7]=JMP, out=pcLoad); 
 }

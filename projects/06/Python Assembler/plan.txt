@@ -1,0 +1,25 @@
+Implementation Plan for Assembler using Python: 
+
+    1. Parser
+            Reads "*.asm" file
+            On first parse, updates symbol table with all labels in program
+            Removes all white space and comments
+            Determines command type for each code it parses
+
+    2. Code
+            Takes in mnemonic for command type returned by Parser
+            Translates and returns the binary code equivalent of the mnemonic
+
+    3. SymbolTable
+            Creates empty symbol table
+            Adds pre-defined variables
+            Adds labels on first parse
+            Adds variables in second parse
+            Used to return the value associated with each key after second parse
+
+    4. Assembler/Main
+            Main module that calls on each of these modules to create the assembler 
+            Takes in input file as the command line arg
+            Outputs ".hack" file in translated binary (same filename as the input.asm file)
+            Rewrites the output file if used more than once on the same input file
+            

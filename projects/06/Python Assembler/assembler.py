@@ -71,4 +71,5 @@ def get_binary(n):
     return binary
 
 
-Assembler(sys.argv[1])
+hack_file = Assembler(sys.argv[1])
+hack_file.write_hack()

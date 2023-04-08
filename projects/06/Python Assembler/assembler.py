@@ -2,7 +2,7 @@
 import sys
 from code import Code
 from AsmParser import Parser
-
+from SymbolTable import SymbolTable
 
 class Assembler:
 

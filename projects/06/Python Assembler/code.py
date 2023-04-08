@@ -49,6 +49,9 @@ class Code:
     @classmethod
     def dest_code(cls, dest_mnemonic):          # Dest conversion method
         code = ''
+
+        if dest_mnemonic == None:
+            return '000'
         
         if 'A' in dest_mnemonic:      # A code -> 'X00'
             code += '1'

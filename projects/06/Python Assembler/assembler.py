@@ -71,5 +71,11 @@ def get_binary(n):
     return binary
 
 
-hack_file = Assembler(sys.argv[1])
-hack_file.write_hack()
+
+def main():
+    hack_file = Assembler(sys.argv[1])
+    hack_file.write_hack()
+
+
+if __name__ == "__main__":
+    main()

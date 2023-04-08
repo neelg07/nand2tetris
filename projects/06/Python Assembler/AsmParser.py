@@ -85,9 +85,9 @@ class Parser:
             # Split by semi-colon, remove dest mnemonic if present
             semicolon_split = command.split(';')
 
-            dest = semicolon_split[0].find('=')     # if '=' is present, return substring after equal sign
-            if dest != -1:
-                comp = semicolon_split[0][dest + 1]
+            equal_sign = semicolon_split[0].find('=')     # if '=' is present, return substring after equal sign
+            if equal_sign != -1:
+                comp = semicolon_split[0][(equal_sign + 1):]
             else:
                 comp = semicolon_split[0]
 

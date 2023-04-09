@@ -91,3 +91,10 @@ By digging deep into the implementations behind the multi-layered abstractions u
 - The most difficult concept to implement was the CPU chip, mostly because I thought I got the implementation correct but missed a few minor details like the load inputs for ARegister and DRegister. I had to use the test script and compare file provided to debug this process one by one, and even looked at the little details such as individual 16-bit instructional code to find a resolution.
 
 - All in all, pretty simple project when compared to the past few, and the computer test scripts provided all ran positive results on the first run.
+
+## Project 6: Assembler
+- This project took the longest time, but was not the most difficult. In fact, it was the most enjoyable since I implemented the assembler by using an actual high-level programming language which I was used to. 
+
+- I chose Python for this particular project because it is easier to conduct high-level processes, and time-complexity wasn't particularly important to take into consideration.
+
+- I created separate modules and imported them into one main assembler file, which was cool because I recently was reading about modular programming in a Javascript course I'm taking and was able to practice it more in this project. 

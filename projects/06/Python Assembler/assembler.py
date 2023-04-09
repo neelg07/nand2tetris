@@ -9,18 +9,20 @@ class Assembler:
     def __init__(self, file):       # Save file path and root name
         self.file = file
         self.filename = self.file.split('/')[-1].split('.')[0]
+        self.var_count = 16
 
 
-    def write_hack(self):
+    def write_hack(self, symbol_table):
+
         output = open(f'{self.filename}.hack', 'w')         # 'w'rite mode overwrites the file each time it is writtent o
 
         parser_file = Parser(self.file)             # instantiate parser obj
 
         while parser_file.hasMoreCommands():                # while there are more lines to parse, translate current line and write to output hack file
-            current_command = parser_file.parsed[0]
 
             if parser_file.commandType() == 'A_COMMAND':
-                hack_code = self.getACommand(current_command)
+                symbol = parser_file.symbol()
+                hack_code = self.getACommand(symbol, symbol_table)
 
             elif parser_file.commandType() == 'C_COMMAND':
                 dest = parser_file.dest()
@@ -29,6 +31,10 @@ class Assembler:
 
                 hack_code = self.getCCommand(dest, comp, jump)
 
+            else:
+                parser_file.advance()
+                continue
+
 
             output.write(f'{hack_code}\n')
             parser_file.advance()
@@ -36,9 +42,20 @@ class Assembler:
         output.close()
 
 
-    def getACommand(self, command):             # Convert A command to binary string
-        decimal = command.replace('@', '')
-        a_code = f'0{get_binary(int(decimal))}'
+    def getACommand(self, symbol, symbol_table):                  
+        if symbol.isdigit():                            # Convert A command to binary string if digit
+            a_code = f'0{get_binary(int(symbol))}'      # or get saved value from symbol table
+        
+        elif symbol in symbol_table.keys():
+            address = symbol_table[symbol]
+            a_code = f'0{get_binary(address)}'
+
+        else:
+            symbol_table.addEntry(symbol, self.var_count)
+            self.var_count += 1
+            
+            address = symbol_table[symbol]
+            a_code = f'0{get_binary(address)}'
 
         return a_code
     
@@ -69,6 +86,8 @@ class Assembler:
                 instruction += 1
                 first_parse.advance()
 
+        return symbol_table.symbols
+
 
 
 
@@ -92,7 +111,8 @@ def get_binary(n):
 
 def main():
     hack_file = Assembler(sys.argv[1])
-    hack_file.write_hack()
+    table = hack_file.createSymbolTable()
+    hack_file.write_hack(table)
 
 
 if __name__ == "__main__":

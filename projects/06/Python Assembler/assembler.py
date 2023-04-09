@@ -51,6 +51,24 @@ class Assembler:
         concat_binary = f'111{comp_binary}{dest_binary}{jump_binary}'
 
         return concat_binary
+    
+
+    def createSymbolTable(self):
+        symbol_table = SymbolTable()
+        first_parse = Parser(self.file)
+        instruction = 0
+
+        while first_parse.hasMoreCommands():                   # parse entire script, add L_Commands (symbol, ins. mem) into symbol table
+            
+            if first_parse.commandType() == 'L_COMMAND':
+                symbol = first_parse.symbol()
+                symbol_table.addEntry(symbol, instruction)
+                first_parse.advance()
+
+            else:
+                instruction += 1
+                first_parse.advance()
+
 
 
 

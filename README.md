@@ -22,7 +22,7 @@ By digging deep into the implementations behind the multi-layered abstractions u
 * [Project 3: Sequential Logic](#project-3-memory--sequential-logic)   
 * [Project 4: Machine Language](#project-4-machine-language)
 * [Project 5: Computer Architecture](#project-5-computer-architecture)  
-* Project 6: Assembler   
+* [Project 6: Assembler](#project-6-assembler)
 * Project 7: VM I: Stack Arithmetic   
 * Project 8: VM II: Program Control   
 * Project 9: High-Level Language  
@@ -97,4 +97,6 @@ By digging deep into the implementations behind the multi-layered abstractions u
 
 - I chose Python for this particular project because it is easier to conduct high-level processes, and time-complexity wasn't particularly important to take into consideration.
 
-- I created separate modules and imported them into one main assembler file, which was cool because I recently was reading about modular programming in a Javascript course I'm taking and was able to practice it more in this project. 
+- I created separate modules and imported them into one main assembler file, which was cool because I recently was reading about modular programming in a Javascript course I'm taking and was able to practice it more in this project.
+
+- Interesting to see how assemblers are implemented to translate symbolic code into binary. Also interesting to note the similarities between an assembler and compiler/interpreter of high-level languages such as python or java. 

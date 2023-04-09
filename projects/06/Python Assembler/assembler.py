@@ -51,7 +51,7 @@ class Assembler:
             a_code = f'0{get_binary(address)}'
 
         else:
-            symbol_table.addEntry(symbol, self.var_count)
+            symbol_table[symbol] = self.var_count
             self.var_count += 1
             
             address = symbol_table[symbol]
